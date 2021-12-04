@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "35315300135",
+    "project_id": "dyno-c47bc",
+    "storage_bucket": "dyno-c47bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35315300135:android:6379d1579c94dc6c711b02",
+        "android_client_info": {
+          "package_name": "com.example.dyno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35315300135-dm5k7vmbieka7s505l0k1novq72kkbq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Oi8dcvOLXKCFHORH6Ixlpgmu6AV6rUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35315300135-dm5k7vmbieka7s505l0k1novq72kkbq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

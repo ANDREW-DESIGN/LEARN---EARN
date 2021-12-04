@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_horizontal"
+        android:text="Posts"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/etValue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="25dp"
+        android:textColorHint="@color/black"
+
+        android:hint="Person name (jhonny)" />
+
+
+
+
+
+    <EditText
+        android:id="@+id/etValue1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="25dp"
+
+        android:textColorHint="@color/black"
+        android:layout_marginTop="20dp"
+        android:hint="courses:Maths,Physics"
+        android:inputType="text"/>
+
+
+    <EditText
+        android:id="@+id/etValue2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+
+        android:hint="Timings: example:1:00pm to 2:00pm"
+
+        android:inputType="text"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/etValue5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="25dp"
+
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/black"
+        android:hint="Phone number:(7896543012)"
+
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/etValue4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="25dp"
+        android:hint="Paid/Free(*If free enter free else/Rs.500-1000/-)"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="20dp"
+
+        tools:ignore="DuplicateIds"/>
+
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="17dp"
+        android:background="#ffffff"
+
+        android:text="Submit"
+        android:textSize="15dp" />
+    <Button
+        android:id="@+id/btnSubmit1"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="17dp"
+        android:background="#ffffff"
+
+        android:text="Show"
+        android:textSize="15dp" />
+
+</LinearLayout>
