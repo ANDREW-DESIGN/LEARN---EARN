@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
-    Button login,signup;
+    Button login,signup,fp;
     EditText email,password;
     FirebaseAuth mAuth;
     FirebaseDatabase root;
@@ -26,9 +26,17 @@ public class Login extends AppCompatActivity {
         password=findViewById(R.id.password);
         login=findViewById(R.id.register);
         signup=findViewById(R.id.signup);
+        fp=findViewById(R.id.fp);
         mAuth=FirebaseAuth.getInstance();
 
         root = FirebaseDatabase.getInstance();
+        fp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Login.this, Fp.class);
+                startActivity(i);
+            }
+        });
         login.setOnClickListener(v -> login());
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,12 +57,14 @@ public class Login extends AppCompatActivity {
                     .show();
 
         }
-        if(pass.length()<=6){
+     /*   if(pass.length()<=6){
             Toast.makeText(getApplicationContext(),
                     "Please enter correct password!!",
                     Toast.LENGTH_LONG)
                     .show();
         }
+        */
+
         mAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(Login.this.getApplicationContext(),

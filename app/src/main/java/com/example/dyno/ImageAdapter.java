@@ -53,6 +53,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return mUploads.size();
     }
 
+
+
     public class ImageViewHolder extends RecyclerView.ViewHolder {
         TextView tutor_name, courses, timings, base_price, phone;
 
@@ -68,11 +70,3 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         }
     }
 }
-
-
-
-
-
-
-
-

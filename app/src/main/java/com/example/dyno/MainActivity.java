@@ -1,22 +1,27 @@
 package com.example.dyno;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editText,editText1,editText2,editText3,editText4;
-    Button submit,show;
+    EditText editText, editText1, editText2, editText3, editText4;
+    Button submit, show;
     DatabaseReference root;
+    Toolbar toolbar;
 
 
     @Override
@@ -24,12 +29,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editText = findViewById(R.id.etValue);
-        editText1=findViewById(R.id.etValue1);
-        editText4=findViewById(R.id.etValue4);
-        editText2=findViewById(R.id.etValue2);
-        editText3=findViewById(R.id.etValue5);
+        editText1 = findViewById(R.id.etValue1);
+        editText4 = findViewById(R.id.etValue4);
+        editText2 = findViewById(R.id.etValue2);
+        editText3 = findViewById(R.id.etValue5);
         submit = findViewById(R.id.btnSubmit);
-        show=findViewById(R.id.btnSubmit1);
+        show = findViewById(R.id.btnSubmit1);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         // Database reference pointing to root of database
 
@@ -43,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 String tutor_name = editText.getText().toString();
                 String courses = editText1.getText().toString();
                 String timings = editText2.getText().toString();
-                 String base_price = editText3.getText().toString();
+                String base_price = editText3.getText().toString();
                 String phone = editText4.getText().toString();
-                if(phone.length()!=10){
+                if (phone.length() != 10) {
                     Toast.makeText(getApplicationContext(),
                             "Please enter valid phonenumber",
                             Toast.LENGTH_LONG)
@@ -88,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             demoRef.setValue(value3);
 
             */
-                Model model = new Model(tutor_name, courses,timings,base_price, phone);
+                Model model = new Model(tutor_name, courses, timings, base_price, phone);
                 root.push().setValue(model);
                 Toast.makeText(MainActivity.this, "Data Saved", Toast.LENGTH_SHORT).show();
 
@@ -97,10 +107,42 @@ public class MainActivity extends AppCompatActivity {
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this , Imagesactivity.class));
+                startActivity(new Intent(MainActivity.this, Imagesactivity.class));
             }
         });
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.advertisemnt) {
+            Intent i = new Intent(MainActivity.this, Av.class);
+            Toast.makeText(MainActivity.this, "move to advertisements", Toast.LENGTH_SHORT).show();
+            startActivity(i);
+
+        } else if (id == R.id.certificate) {
+            Intent i = new Intent(MainActivity.this, Cr.class);
+            Toast.makeText(MainActivity.this, "move to certificate", Toast.LENGTH_SHORT).show();
+            startActivity(i);
+        } else if (id == R.id.updatePassword) {
+            Intent i = new Intent(MainActivity.this, Up.class);
+            Toast.makeText(MainActivity.this, "move to update Password", Toast.LENGTH_SHORT).show();
+            startActivity(i);
+        } else if (id == R.id.Logout) {
+            Intent i = new Intent(MainActivity.this, Login.class);
+            Toast.makeText(MainActivity.this, "succcessfully logged out", Toast.LENGTH_SHORT).show();
+            startActivity(i);
+        }
+        return true;
+    }
+
 }
+

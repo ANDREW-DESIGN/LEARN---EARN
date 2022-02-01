@@ -6,14 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="center_horizontal"
-        android:text="Posts"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="40sp" />
+<include
+    android:id="@+id/toolbar"
+    layout="@layout/toolbar"></include>
+
+
 
     <EditText
         android:id="@+id/etValue"
@@ -88,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="17dp"
-        android:background="#ffffff"
+        android:background="@color/purple_500"
 
         android:text="Submit"
         android:textSize="15dp" />
@@ -98,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="17dp"
-        android:background="#ffffff"
+        android:background="@color/purple_500"
 
         android:text="Show"
         android:textSize="15dp" />

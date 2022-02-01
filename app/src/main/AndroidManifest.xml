@@ -11,12 +11,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dyno"
         tools:ignore="AllowBackup">
+        <activity android:name=".Cr" />
+        <activity android:name=".ecard" />
+        <activity android:name=".Av" />
+        <activity android:name=".Up" />
+        <activity android:name=".Fp" />
         <activity android:name=".Imagesactivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
